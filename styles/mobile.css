@@ -35,12 +35,13 @@ body {
 
 .page-header {
   width: 100%;
+  padding: clamp(2rem, 4.04vw + 1.05rem, 4.6875rem)
+    clamp(2rem, 12.5vw + -0.93rem, 10.3125rem);
+  padding-bottom: 0px;
   text-align: left;
 }
 
 .header-logo {
-  margin-top: clamp(2rem, 4.04vw + 1.05rem, 4.6875rem);
-  margin-left: clamp(2rem, 12.5vw + -0.93rem, 10.3125rem);
   height: clamp(1.3125rem, 1.13vw + 1.05rem, 2.0625rem);
 }
 
@@ -91,8 +92,8 @@ main {
 
 .hero-paragraph {
   margin-top: clamp(1rem, 1.5vw + 0.65rem, 2rem);
-  font-size: clamp(14px, 0.19vw + 0.83rem, 16px);
-  line-height: clamp(22px, 0.56vw + 1.24rem, 28px);
+  font-size: clamp(0.875rem, 0.19vw + 0.83rem, 1rem);
+  line-height: clamp(1.375rem, 0.56vw + 1.24rem, 1.75rem);
   text-align: center;
 }
 
@@ -219,14 +220,16 @@ main {
     background-position: top left;
     background-size: 58% 100%;
     z-index: 1;
+    align-items: flex-start;
+  }
+
+  .page-header {
+    width: 58%;
   }
 
   main {
-    width: 100%;
-    padding: 0 clamp(2rem, 12.5vw + -0.93rem, 10.3125rem);
-    flex-direction: row;
-    align-items: center;
-    padding-bottom: 6rem;
+    width: 58%;
+    align-items: flex-start;
   }
 
   .hero-picture {
@@ -244,10 +247,38 @@ main {
     position: absolute;
     top: 0;
     right: 0;
-    width: 100%;
     height: 100%;
     max-height: none;
-    object-fit: cover;
+  }
+
+  .hero-text-container {
+    margin-top: clamp(4rem, 10.71vw + -1.14rem, 8.5rem);
+    width: clamp(19.375rem, 19.94vw + 9.87rem, 27.8125rem);
+  }
+
+  .hero-heading {
+    text-align: left;
+  }
+
+  .hero-paragraph {
+    text-align: left;
+  }
+
+  .attribution {
+    background: linear-gradient(150.03deg, #ffffff 0%, #fff4f4 84.51%);
+  }
+}
+
+@media (min-width: 90rem) {
+  main {
+    padding: 0 clamp(165px, 38.65vw + -24.47rem, 400px);
+  }
+
+  .page-header {
+    padding: clamp(2rem, 4.04vw + 1.05rem, 4.6875rem)
+      clamp(165px, 38.65vw + -24.47rem, 400px);
+    padding-bottom: 0px;
+    text-align: left;
   }
 
   .hero-text-container {
@@ -257,20 +288,6 @@ main {
     justify-content: center;
     align-items: center;
     width: clamp(19.375rem, 19.94vw + 9.87rem, 27.8125rem);
-  }
-
-  .hero-heading {
-    text-transform: uppercase;
-    text-align: left;
-    font-weight: 300;
-    font-size: clamp(2.5rem, 2.25vw + 1.97rem, 4rem);
-    line-height: clamp(2.625rem, 2.72vw + 1.99rem, 4.4375rem);
-    letter-spacing: clamp(0.625rem, 0.66vw + 0.47rem, 1.0625rem);
-  }
-
-  .hero-heading span {
-    font-weight: 600;
-    color: var(--dark-grayish-red);
   }
 
   .hero-paragraph {
