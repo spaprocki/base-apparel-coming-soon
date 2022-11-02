@@ -1,0 +1,286 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap');
+
+/* Design system styles */
+
+:root {
+  --desaturated-red: hsl(0, 36%, 70%);
+  --soft-red: hsl(0, 93%, 68%);
+  --dark-grayish-red: hsl(0, 6%, 24%);
+  --gradient: linear-gradient(
+    135deg,
+    hsl(0, 80%, 86%) 0%,
+    hsl(0, 74%, 74%) 100%
+  );
+  --gradient-hover: linear-gradient(
+    135deg,
+    hsla(0, 80%, 86%, 0.5) 0%,
+    hsla(0, 74%, 74%, 0.5) 100%
+  );
+}
+
+body {
+  font-family: 'Josefin Sans', 'sans-serif';
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--desaturated-red);
+  background: linear-gradient(150.03deg, #ffffff 0%, #fff4f4 84.51%);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  min-height: calc(100vh + 2.75rem);
+  position: relative;
+}
+
+.page-header {
+  width: 100%;
+  text-align: left;
+}
+
+.header-logo {
+  margin-top: clamp(2rem, 4.04vw + 1.05rem, 4.6875rem);
+  margin-left: clamp(2rem, 12.5vw + -0.93rem, 10.3125rem);
+  height: clamp(1.3125rem, 1.13vw + 1.05rem, 2.0625rem);
+}
+
+main {
+  width: 100%;
+  padding: 0 clamp(2rem, 12.5vw + -0.93rem, 10.3125rem);
+  padding-bottom: 6rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hero-picture {
+  margin-top: clamp(2rem, 4.04vw + 1.05rem, 4.6875rem);
+  width: 100vw;
+  max-height: 400px;
+}
+
+.hero-picture img {
+  width: 100%;
+  max-height: 400px;
+  object-fit: cover;
+  object-position: top center;
+}
+
+.hero-text-container {
+  margin-top: 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: clamp(19.375rem, 12.68vw + 16.4rem, 27.8125rem);
+}
+
+.hero-heading {
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: 300;
+  font-size: clamp(2.5rem, 2.25vw + 1.97rem, 4rem);
+  line-height: clamp(2.625rem, 2.72vw + 1.99rem, 4.4375rem);
+  letter-spacing: clamp(0.625rem, 0.66vw + 0.47rem, 1.0625rem);
+}
+
+.hero-heading span {
+  font-weight: 600;
+  color: var(--dark-grayish-red);
+}
+
+.hero-paragraph {
+  margin-top: clamp(1rem, 1.5vw + 0.65rem, 2rem);
+  font-size: clamp(14px, 0.19vw + 0.83rem, 16px);
+  line-height: clamp(22px, 0.56vw + 1.24rem, 28px);
+  text-align: center;
+}
+
+.hero-form {
+  position: relative;
+  margin-top: clamp(2rem, 0.75vw + 1.82rem, 2.5rem);
+  width: 100%;
+}
+
+.email-input {
+  border: none;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  width: 100%;
+  height: clamp(3rem, 0.75vw + 2.82rem, 3.5rem);
+  padding-left: clamp(1.5rem, 0.75vw + 1.32rem, 2rem);
+  font-size: clamp(0.875rem, 0.19vw + 0.83rem, 1rem);
+  line-height: 1.75rem;
+  color: var(--dark-grayish-red);
+  border: 1px solid var(--desaturated-red);
+  border-radius: 1.75rem;
+  background: transparent;
+  z-index: 2;
+}
+
+.email-input:focus {
+  outline: none;
+  background: white;
+  border-style: inset;
+  border: 2px solid var(--desaturated-red);
+}
+
+.email-input.error {
+  border: 2px solid var(--soft-red);
+}
+
+::placeholder {
+  font-size: clamp(0.875rem, 0.19vw + 0.83rem, 1rem);
+  color: var(--desaturated-red);
+  opacity: 1;
+}
+
+:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: var(--desaturated-red);
+}
+
+::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: var(--desaturated-red);
+}
+
+.submit-button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  outline: none;
+  width: clamp(4rem, 3.38vw + 3.21rem, 6.25rem);
+  height: clamp(3rem, 0.75vw + 2.82rem, 3.5rem);
+  background: var(--gradient);
+  box-shadow: 0px 15px 20px rgba(198, 110, 110, 0.247569);
+  border: none;
+  border-radius: 28px;
+  cursor: pointer;
+  transition: background-color ease-in-out 0.3s;
+}
+
+.submit-button:active {
+  background: var(--gradient-hover);
+}
+
+.error-icon {
+  display: none;
+  width: 1.5rem;
+  position: absolute;
+  top: clamp(13px, 0.38vw + 0.72rem, 17px);
+  right: clamp(4.5rem, 4.13vw + 3.53rem, 7.25rem);
+}
+
+.error-message {
+  display: none;
+  font-size: 0.8125rem;
+  line-height: 1.75rem;
+  color: var(--soft-red);
+  position: absolute;
+  top: clamp(3.5rem, 0.38vw + 3.41rem, 3.75rem);
+  left: clamp(1.5rem, 0.75vw + 1.32rem, 2rem);
+}
+
+.visible {
+  display: block;
+}
+
+.attribution {
+  position: absolute;
+  font-family: 'Montserrat', 'sans-serif';
+  padding: 0.625rem;
+  bottom: 0px;
+  width: 100%;
+  text-align: center;
+  background-color: var(--soft-blue);
+  color: var(--very-dark-blue-main-bg);
+}
+
+.attribution a,
+.attribution a:visited {
+  text-decoration: underline;
+  color: var(--very-dark-blue-main-bg);
+}
+
+.attribution a:hover {
+  font-weight: 500;
+}
+
+@media (min-width: 48rem) {
+  body {
+    background-image: url('../images/bg-pattern-desktop.svg'),
+      linear-gradient(150.03deg, #ffffff 0%, #fff4f4 84.51%);
+    background-repeat: no-repeat;
+    background-position: top left;
+    background-size: 58% 100%;
+    z-index: 1;
+  }
+
+  main {
+    width: 100%;
+    padding: 0 clamp(2rem, 12.5vw + -0.93rem, 10.3125rem);
+    flex-direction: row;
+    align-items: center;
+    padding-bottom: 6rem;
+  }
+
+  .hero-picture {
+    margin-top: 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    max-height: none;
+    width: 42%;
+    order: 2;
+  }
+
+  .hero-picture img {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    max-height: none;
+    object-fit: cover;
+  }
+
+  .hero-text-container {
+    margin-top: clamp(4rem, 10.71vw + -1.14rem, 8.5rem);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: clamp(19.375rem, 19.94vw + 9.87rem, 27.8125rem);
+  }
+
+  .hero-heading {
+    text-transform: uppercase;
+    text-align: left;
+    font-weight: 300;
+    font-size: clamp(2.5rem, 2.25vw + 1.97rem, 4rem);
+    line-height: clamp(2.625rem, 2.72vw + 1.99rem, 4.4375rem);
+    letter-spacing: clamp(0.625rem, 0.66vw + 0.47rem, 1.0625rem);
+  }
+
+  .hero-heading span {
+    font-weight: 600;
+    color: var(--dark-grayish-red);
+  }
+
+  .hero-paragraph {
+    margin-top: clamp(1rem, 1.5vw + 0.65rem, 2rem);
+    font-size: clamp(14px, 0.19vw + 0.83rem, 16px);
+    line-height: clamp(22px, 0.56vw + 1.24rem, 28px);
+    text-align: left;
+  }
+
+  .attribution {
+    background: linear-gradient(150.03deg, #ffffff 0%, #fff4f4 84.51%);
+  }
+}
