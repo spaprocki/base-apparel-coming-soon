@@ -5,7 +5,8 @@ const errorIconElement = document.getElementById('error-icon');
 
 submitButtonElement.addEventListener('click', evaluateEmail);
 
-function evaluateEmail() {
+function evaluateEmail(event) {
+  event.preventDefault();
   if (!emailIsValid(emailInputElement)) {
     showError();
   } else {
